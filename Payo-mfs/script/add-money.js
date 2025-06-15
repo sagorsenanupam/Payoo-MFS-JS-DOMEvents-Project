@@ -11,7 +11,7 @@ document
       document.getElementById("main-balance").innerText
     );
 
-    if (pinNumber === 1234) {
+    if (pinNumber === 1234 && amount) {
       const sum = mainBalance + amount;
       //   console.log(sum);
       document.getElementById("main-balance").innerText = sum;
