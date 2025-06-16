@@ -33,11 +33,17 @@
             is low and
           </p>
           <div class="cards grid grid-cols-3 mt-10 gap-5 p-2">
-            <div class="box border p-4 text-center rounded-sm cursor-pointer">
+            <div
+              id="add-money-box"
+              class="box border p-4 text-center rounded-sm cursor-pointer"
+            >
               <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
               <h3>Add Money</h3>
             </div>
-            <div class="box border p-4 text-center rounded-sm cursor-pointer">
+            <div
+              id="cash-out-box"
+              class="box border p-4 text-center rounded-sm cursor-pointer"
+            >
               <img class="w-8 mx-auto" src="./assets/send1.png" alt="" />
               <h3>Cash Out</h3>
             </div>
@@ -58,7 +64,11 @@
               <h3>Transactions</h3>
             </div>
           </div>
-          <section class="max-w-md min-h-screen mx-auto py-6 rounded-sm">
+          <!-- add money section -->
+          <section
+            id="addmoney"
+            class="max-w-md min-h-screen mx-auto py-6 rounded-sm"
+          >
             <h2 class="font-bold text-xl p-5">Add Money</h2>
             <fieldset
               class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto mt-5"
@@ -104,9 +114,45 @@
               </button>
             </fieldset>
           </section>
+          <!-- Cash Out section -->
+          <section id="cashout">
+            <h2 class="font-bold text-xl p-5">Cash Out</h2>
+            <fieldset
+              class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto mt-5"
+            >
+              <label class="label text-black font-bold">Agent Number</label>
+              <input
+                type="text"
+                class="input"
+                placeholder="Enter 11 digit account number"
+              />
+
+              <label class="label text-black font-bold">Amount</label>
+              <input
+                id="cash-out-amount"
+                type="text"
+                class="input"
+                placeholder="Add Amount to Withdraw"
+              />
+
+              <label class="label text-black font-bold">Pin Number</label>
+              <input
+                id="cash-out-pin-number"
+                type="text"
+                class="input"
+                placeholder="Enter 4 digit pin number"
+              />
+              <button id="cash-out-btn" class="btn btn-info mt-5 text-white">
+                Withdraw Money
+              </button>
+            </fieldset>
+          </section>
         </section>
       </header>
     </section>
     <script src="./script/add-money.js"></script>
+    <script src="/Payo-mfs/script/toggle.js"></script>
+    <script src="/Payo-mfs/script/cash-out.js"></script>
+    <script src="/Payo-mfs/utilities/utilities.js"></script>
   </body>
 </html>
