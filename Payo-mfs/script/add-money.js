@@ -23,5 +23,6 @@ document
   .getElementById("add-money")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("clicked");
+    const value = getInputValueByID();
+    console.log(value);
   });
