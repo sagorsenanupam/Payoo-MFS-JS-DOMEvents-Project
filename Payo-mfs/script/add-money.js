@@ -23,6 +23,20 @@ document
   .getElementById("add-money")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    const value = getInputValueByID();
-    console.log(value);
+    const amount = getInputValueByID("amount");
+    const pin = getInputValueByID("pin-number");
+    const mainBalance = getInnerTextByID("main-balance");
+    const account = document.getElementById("account");
+
+    if (account.length === 11) {
+      if (pin === 1234) {
+        const sum = mainBalance + amount;
+        //   console.log(sum);
+        document.getElementById("main-balance").innerText = sum;
+      } else {
+        alert("Error Pin");
+      }
+    } else {
+      alert("Pin Number is Invalid");
+    }
   });
