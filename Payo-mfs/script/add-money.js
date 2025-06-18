@@ -24,15 +24,14 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
     const amount = getInputValueByID("amount");
-    const pin = getInputValueByID("pin-number");
+    const pinNum = getInputValueByID("pin-number");
     const mainBalance = getInnerTextByID("main-balance");
-    const account = document.getElementById("account");
+    const account = document.getElementById("account").value;
 
     if (account.length === 11) {
-      if (pin === 1234) {
+      if (pinNum === 1234) {
         const sum = mainBalance + amount;
-        //   console.log(sum);
-        document.getElementById("main-balance").innerText = sum;
+        setInnerTextByIDandValue("main-balance", sum);
       } else {
         alert("Error Pin");
       }
