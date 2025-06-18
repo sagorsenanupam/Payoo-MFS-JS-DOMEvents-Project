@@ -31,15 +31,22 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
 
-    const accountNumber = document.getElementById("account").value;
+    const account = document.getElementById("account").value;
 
-    const amount = document.getElementById("cash-out-amount");
-    console.log(amount);
+    const amount = getInputValueByID("cash-out-amount");
 
-    if (accountNumber.length === 11) {
-      // if(){
-      // }
+    const pinNum = getInputValueByID("cash-out-pin-number");
+
+    const mainBalance = getInnerTextByID("main-balance");
+
+    if (account.length === 11) {
+      if (pinNum === 1234) {
+        const sum = mainBalance - amount;
+        setInnerTextByIDandValue("main-balance", sum);
+      } else {
+        alert("Error Pin");
+      }
     } else {
-      alert("Account Number Invalid");
+      alert("Pin Number is Invalid");
     }
   });
