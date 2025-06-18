@@ -28,6 +28,13 @@ document
     const mainBalance = getInnerTextByID("main-balance");
     const account = document.getElementById("account").value;
 
+    const selectedBank = document.getElementById("allbank");
+
+    if (amount < 0) {
+      alert("Taka must be in positive");
+      return;
+    }
+
     if (account.length === 11) {
       if (pinNum === 1234) {
         const sum = mainBalance + amount;
@@ -35,11 +42,15 @@ document
 
         const container = document.getElementById("transaction-history");
 
-        const p = document.createElement("p");
-        p.innerText = `
-        added ${amount} from ${account}
+        const div = document.createElement("div");
+        div.classList.add("bg-red-400");
+        div.innerHTML = `
+        <h1 class='text-yellow-300 '>Added Money from ${selectedBank.value} Bank</h1>
+        <h3>${amount}</h3>
+        <p>Account Number: ${account}</p>
+        
         `;
-        container.appendChild(p);
+        container.appendChild(div);
       } else {
         alert("Error Pin");
       }

@@ -35,6 +35,11 @@ document
     const mainBalance = getInnerTextByID("main-balance");
     const account = document.getElementById("account").value;
 
+    if (amount > mainBalance) {
+      alert("Invalid Amount");
+      return;
+    }
+
     if (account.length === 11) {
       if (pinNum === 1234) {
         const sum = mainBalance - amount;
