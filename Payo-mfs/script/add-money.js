@@ -32,6 +32,14 @@ document
       if (pinNum === 1234) {
         const sum = mainBalance + amount;
         setInnerTextByIDandValue("main-balance", sum);
+
+        const container = document.getElementById("transaction-history");
+
+        const p = document.createElement("p");
+        p.innerText = `
+        added ${amount} from ${account}
+        `;
+        container.appendChild(p);
       } else {
         alert("Error Pin");
       }
