@@ -30,14 +30,10 @@ document
   .getElementById("cash-out-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
-
-    const account = document.getElementById("account").value;
-
     const amount = getInputValueByID("cash-out-amount");
-
-    const pinNum = getInputValueByID("cash-out-pin-number");
-
+    const pinNum = getInputValueByID("pin-number");
     const mainBalance = getInnerTextByID("main-balance");
+    const account = document.getElementById("account").value;
 
     if (account.length === 11) {
       if (pinNum === 1234) {
